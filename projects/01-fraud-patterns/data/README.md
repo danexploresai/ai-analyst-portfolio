@@ -11,7 +11,7 @@ Kaggle version is scaled down to one quarter of the original.
 
 | File | Source | Downloaded | Licence |
 |------|--------|------------|---------|
-| _[filename after download]_ | https://www.kaggle.com/datasets/ealaxi/paysim1 | _[date]_ | _[copy from the Kaggle page]_ |
+| _[PS_20174392719_1491204439457_log]_ | https://www.kaggle.com/datasets/ealaxi/paysim1 | _[11/16/2026]_ | _[CC BY-SA 4.0]_ |
 
 ## Why this dataset
 
