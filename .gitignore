@@ -1,0 +1,24 @@
+# Raw data never goes to GitHub (size, licensing, privacy)
+projects/*/data/*
+!projects/*/data/README.md
+
+# Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local databases
+*.duckdb
+*.db
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
