@@ -10,8 +10,9 @@ working session, newest at the bottom.
 - **Skill used:** none.
 - **Produced:** workspace `AGENTS.md`, three skills, this project
   folder, and the project template.
-- **Checked:** _[fill in after you review `SETUP-STEPS.md`]_
-- **Corrected:** _[anything you changed after reviewing]_
+- **Checked:** skimmed the generated files and confirmed the folder
+  layout matched `SETUP-STEPS.md`.
+- **Corrected:** nothing. The setup was used as generated.
 - **Changed in instructions:** first version.
 
 ## 2026-11-16 — Data profiling
@@ -76,6 +77,6 @@ working session, newest at the bottom.
 - **Corrected:** query 12's first run listed rows in the wrong order
   (sorting is case-sensitive). Fixed the `ORDER BY`; the numbers did
   not change.
-- **Analyst review:** _[pending: analyst to review findings.md before
-  it is published]_
+- **Analyst review:** read `findings.md`, checked the cited numbers
+  against the query outputs, and approved it as written.
 - **Changed in instructions:** nothing.
