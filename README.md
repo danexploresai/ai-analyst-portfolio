@@ -1,6 +1,6 @@
 # AI-assisted analyst portfolio
 
-**Dan Tran** · [(https://www.linkedin.com/in/dan-tran-b34bb67/)]
+**Dan Tran** · [LinkedIn](https://www.linkedin.com/in/dan-tran-b34bb67/)
 
 I am an analyst with a background in fraud investigation. This
 repository shows how I do analyst work with AI agents: the questions I
@@ -11,7 +11,7 @@ and the findings that come out.
 
 | # | Project | Question | Status |
 |---|---------|----------|--------|
-| 01 | [Fraud patterns](projects/01-fraud-patterns/) | Which transaction patterns separate fraud from normal activity? | In progress |
+| 01 | [Fraud patterns](projects/01-fraud-patterns/) | Which transaction patterns separate fraud from normal activity? | In progress: first findings written |
 
 ## How I work with AI
 

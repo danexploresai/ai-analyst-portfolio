@@ -91,3 +91,29 @@ Summed by period, they match query 08.
 ## Checks that could not be run
 
 None.
+
+# SQL review — query 12
+
+Reviewed 2026-11-18 using `skills/sql-review/SKILL.md`, before any
+number was reported. Engine: SQLite. Same table and facts as above:
+6,362,620 rows, 0 nulls in `step`, `type` and `isFraud`, `isFraud`
+holds only 0 and 1, and `step` runs from 1 to 743.
+
+## 12_review_rule_transfer_cashout.sql
+
+**Verdict: safe to use.**
+
+| # | Check | Result | Evidence |
+|---|-------|--------|----------|
+| 1 | Question match | Pass | Answers: for all steps and for each period, rows and fraud rows inside and outside the rule "type is TRANSFER or CASH_OUT", with each group's share of rows and of fraud. That is the question asked. |
+| 2 | Join fan-out | Not applicable | No join. The `UNION ALL` deliberately repeats every row once as "all steps" and once in its period; the results are partitioned by period, so the two levels are never added together. |
+| 3 | Dropped rows | Pass | No filter. "All steps" adds to 6,362,620 rows and 8,213 fraud rows. Steps 1 to 372 add to 5,285,888 and 4,153, and steps 373 to 743 to 1,076,732 and 4,060, matching query 08. |
+| 4 | Nulls | Pass | 0 nulls in `type`, so no row can fall outside both groups. The 5 type values are exact, so `IN ('TRANSFER', 'CASH_OUT')` misses no spelling variant. |
+| 5 | Denominators | Pass | Share of rows: rows in the group divided by all rows in the same period. Share of fraud: fraud rows in the group divided by all fraud rows in the same period. Every period has fraud rows, so no division by zero. Shares add to 100 within each period. |
+| 6 | Double counting | Pass | Within one period, each row falls in exactly one group. |
+| 7 | Time boundaries | Pass | Same split as query 08. |
+| 8 | Grouping | Pass | `period` and `rule_group` are the only non-aggregated columns and both are in `GROUP BY`. |
+
+Independent check: counted directly with a `WHERE` filter, TRANSFER or
+CASH_OUT has 2,770,409 rows and 8,213 fraud rows, and all other types
+have 3,592,211 rows and 0 fraud rows. Both match the query.

@@ -57,3 +57,25 @@ working session, newest at the bottom.
   underscore type spellings, and SQLite. Added a Decisions section
   (time periods, no balance columns, keep zero-amount rows) and
   updated Current status. All approved by the analyst.
+
+## 2026-11-18 — First findings: fraud by transaction type
+
+- **Asked:** update `findings.md` with the results so far.
+- **Skill used:** `skills/sql-review/SKILL.md` (for the new query),
+  then `skills/findings-writeup/SKILL.md`.
+- **Produced:** `sql/12_review_rule_transfer_cashout.sql` (how much
+  of all transactions and of all fraud the rule "review only TRANSFER
+  and CASH_OUT" covers, overall and in each period), its review at the
+  end of `sql_review.md`, the first version of `findings.md` with three
+  findings, and a partial answer in the project `README.md`.
+- **Checked:** reloaded the CSV into SQLite (6,362,620 rows) and
+  re-ran queries 06, 08, 09, 10 and 11. Every number matched the
+  2026-11-16 results. Query 12 passed review, and its totals were
+  recounted with a direct `WHERE` filter and matched. Each finding
+  holds in both time periods, as the project guardrail requires.
+- **Corrected:** query 12's first run listed rows in the wrong order
+  (sorting is case-sensitive). Fixed the `ORDER BY`; the numbers did
+  not change.
+- **Analyst review:** _[pending: analyst to review findings.md before
+  it is published]_
+- **Changed in instructions:** nothing.
